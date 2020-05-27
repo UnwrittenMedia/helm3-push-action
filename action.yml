@@ -1,0 +1,14 @@
+name: 'Helm3 Push Action'
+description: 'Package helm chart and push it to Chartmuseum'
+author: 'Unwritten Media'
+branding:
+  color: 'purple'
+  icon: 'upload-cloud'
+inputs: 
+  ChartmuseumUrl:
+    description: 'Url to your Chartmuseum'
+    default: ''
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
