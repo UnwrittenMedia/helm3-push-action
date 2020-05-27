@@ -5,7 +5,7 @@ LABEL maintainer="Marshall Anschutz (https://unwritten.media)" \
   org.label-schema.vendor="Unwritten Media" \
   org.label-schema.schema-version="1.0.0"
 ENV HELM_VERSION v3.2.1
-ENV HELM_PLUGIN_PUSH_VERSION v0.8.1
+ENV HELM_PUSH_PLUGIN_VERSION v0.8.1
 ENV HELM_HOME=/root/.helm
 
 RUN apk add curl tar bash --no-cache
@@ -14,7 +14,7 @@ RUN set -ex \
     && mv linux-amd64/helm /usr/local/bin/helm \
     && rm -rf linux-amd64  \
     && apk add --virtual .helm-build-deps git make \
-    && helm plugin install https://github.com/chartmuseum/helm-push.git --version ${HELM_PLUGIN_PUSH_VERSION} \
+    && helm plugin install https://github.com/chartmuseum/helm-push.git --version ${HELM_PUSH_PLUGIN_VERSION} \
     && apk del --purge .helm-build-deps
 
 COPY entrypoint.sh /entrypoint.sh

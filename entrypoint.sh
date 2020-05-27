@@ -33,8 +33,14 @@ fi
 
 
 
-cd ${SOURCE_DIR}
+echo "Moving into ${SOURCE_DIR}"
+cd /github/workspace/${SOURCE_DIR}
 
+echo "Helm is packaging ${CHART_FOLDER}"
 helm package ${CHART_FOLDER}
 
+echo "  * Packaging finished"
+ls
+echo ""
+echo "Helm is pushing to chartmuseum"
 helm push ${CHART_FOLDER}-* ${CHARTMUSEUM_URL} -u ${CHARTMUSEUM_USER} -p ${CHARTMUSEUM_PASSWORD} ${FORCE}
