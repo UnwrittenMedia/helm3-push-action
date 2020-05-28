@@ -7,6 +7,7 @@ LABEL maintainer="Marshall Anschutz (https://unwritten.media)" \
 ENV HELM_VERSION v3.2.1
 ENV HELM_PUSH_PLUGIN_VERSION v0.8.1
 ENV HELM_HOME=/root/.helm
+ENV XDG_DATA_HOME=/root/.local/share
 
 RUN apk add curl tar bash --no-cache
 RUN set -ex \

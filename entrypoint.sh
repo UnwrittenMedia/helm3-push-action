@@ -31,8 +31,6 @@ elif [ "$FORCE" == "1" ] || [ "$FORCE" == "True" ] || [ "$FORCE" == "TRUE" ]; th
   FORCE="-f"
 fi
 
-
-
 echo "Moving into ${SOURCE_DIR}"
 cd /github/workspace/${SOURCE_DIR}
 
