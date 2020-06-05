@@ -34,6 +34,9 @@ fi
 echo "Moving into ${SOURCE_DIR}"
 cd /github/workspace/${SOURCE_DIR}
 
+echo "Updating dependency"
+helm dependency update
+
 echo "Helm is packaging ${CHART_FOLDER}"
 helm package ${CHART_FOLDER}
 
